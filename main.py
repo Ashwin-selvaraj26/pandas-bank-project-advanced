@@ -68,6 +68,11 @@ class BankAccount:
         
     def expenseAnalytics (self) :
         df = self.transactionDf[self.transactionDf['Transaction Type'] == 'Send']
+        
+        if df.empty :
+            print("No expenses!")
+            return
+        
         df.loc[:,"Change in balance"] = df["Change in balance"].abs()
         summary = df.groupby("Category")["Change in balance"].sum()
         summary.plot(kind='barh')
