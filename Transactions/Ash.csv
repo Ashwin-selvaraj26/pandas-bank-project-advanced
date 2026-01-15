@@ -1,0 +1,5 @@
+Timestamp,Transaction Type,Category,Change in balance
+15/01/26 17:02:19,Recive,-,2000
+15/01/26 17:02:23,Send,food,-200
+15/01/26 17:02:27,Send,rent,-800
+15/01/26 17:02:35,Send,se,-100
