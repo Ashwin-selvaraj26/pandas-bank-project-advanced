@@ -67,10 +67,14 @@ class BankAccount:
         self.transactionDf.to_csv(f"Transactions/{self.name}.csv", index=False)
         
     def expenseAnalytics (self) :
-        df = self.transactionDf[self.transactionDf['Transaction Type'].str.contains('Send')]
-        df.loc[:,"Change in balance"] = -(df["Change in balance"])
-        plt.barh(df["Category"],df["Change in balance"])
+        df = self.transactionDf[self.transactionDf['Transaction Type'] == 'Send']
+        df.loc[:,"Change in balance"] = df["Change in balance"].abs()
+        summary = df.groupby("Category")["Change in balance"].sum()
+        summary.plot(kind='barh')
         plt.title("Expense analytics")
+        plt.xlabel("Amount spent")
+        plt.ylabel("Category")
+        plt.tight_layout()
         plt.show()
 
 
