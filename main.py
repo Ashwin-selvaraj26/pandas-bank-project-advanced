@@ -88,23 +88,32 @@ def main():
     usernameAcc = BankAccount(username)
     while True:
         homeScreen()
-        userInput = int(input("Enter input here : "))
-        match userInput:
-            case 1:
-                usernameAcc.processTransaction(1)
-            case 2:
-                usernameAcc.processTransaction(2)
-            case 3:
-                usernameAcc.viewBalance()
-                input("Press any button to go back : ")
-            case 4:
-                usernameAcc.viewTransactionHistory()
-                usernameAcc.expenseAnalytics()
-                input("Press any button to go back : ")
-            case 5:
-                return
-            case _:
-                print("Enter a valid input.")
+        try:
+            userInput = int(input("Enter input here : "))
+            match userInput:
+                case 1:
+                    usernameAcc.processTransaction(1)
+                    print("")           
+                case 2:
+                    usernameAcc.processTransaction(2)
+                    print("")           
+                case 3:
+                    usernameAcc.viewBalance()
+                    input("Press any button to go back : ")
+                    print("")           
+                case 4:
+                    usernameAcc.viewTransactionHistory()
+                    usernameAcc.expenseAnalytics()
+                    input("Press any button to go back : ")
+                    print("")           
+                case 5:
+                    return
+                case _:
+                    print("Enter a valid input.")
+                    print("")
+        except ValueError:
+            print("Enter a valid input.")
+            
 
 
 def homeScreen():

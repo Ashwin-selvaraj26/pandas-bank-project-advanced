@@ -7,3 +7,5 @@ Timestamp,Transaction Type,Category,Change in balance
 15/01/26 17:36:32,Recive,-,1000
 15/01/26 17:36:35,Send,food,-70
 15/01/26 17:36:45,Send,service,-250
+15/01/26 17:52:48,Recive,-,1000
+15/01/26 17:53:23,Send,product,-200

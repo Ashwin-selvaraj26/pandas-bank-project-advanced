@@ -1,5 +1,4 @@
 import pandas as pd
-import matplotlib.pyplot as plt
 
 transactionDf = pd.read_csv('Transactions/arun.csv')
 
